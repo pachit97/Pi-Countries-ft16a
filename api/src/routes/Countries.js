@@ -7,8 +7,21 @@ const { v4: uuidv4 } = require('uuid');
 
 
 router.get("/", async(req, res) => {
+    const {name} = req.query
     const myCountries = await Country.findAll() 
-    if(myCountries.length > 1){ 
+    if (name) {
+        try{
+        var filtered = await myCountries.filter((country) =>
+          country.name.toLowerCase().includes(name.toLowerCase())
+        )
+        if (filtered.length > 0) {
+            return res.json(filtered)
+        }
+        }catch {
+           return res.status(404).json({ error: "Country not found" });
+        }
+      } 
+    if(myCountries.length > 10){ 
         return res.json(myCountries).status(200);
     }else{
         let apiCountries = await axios.get('https://restcountries.eu/rest/v2/all')
@@ -31,9 +44,9 @@ router.get("/", async(req, res) => {
 
 router.get("/:idPais", async (req, res) => {
     let { idPais } = req.params
-    let traigo = await Country.findAll()
-    console.log(traigo)
-    const myId = await Country.findOne({ where: { id: idPais } });
+    const myId = await Country.findOne({ where: { id: idPais } },  {
+        include: Activity
+    });
     console.log(myId)
 if (myId === null) {
   res.send('Not found!');

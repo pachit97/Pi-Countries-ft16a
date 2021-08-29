@@ -10,15 +10,14 @@ router.get("/", async(req, res) => {
     const {name} = req.query
     const myCountries = await Country.findAll() 
     if (name) {
-        try{
+        
         var filtered = await myCountries.filter((country) =>
           country.name.toLowerCase().includes(name.toLowerCase())
         )
         if (filtered.length > 0) {
             return res.json(filtered)
-        }
-        }catch {
-           return res.status(404).json({ error: "Country not found" });
+        }else{
+            return res.status(404).send( "Country not found" );
         }
       } 
     if(myCountries.length > 10){ 
@@ -53,6 +52,11 @@ if (myId === null) {
 } else {
   res.json(myId)
 }
+})
+
+router.post("/activity", (req, res) => {
+    const {datos} = req.body;
+
 })
 
 module.exports = router;

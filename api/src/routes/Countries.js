@@ -41,12 +41,11 @@ router.get("/", async(req, res) => {
     }
 })
 
-router.get("/:idPais", async (req, res) => {
-    let { idPais } = req.params
-    const myId = await Country.findOne({ where: { id: idPais } },  {
+router.get("/:id", async (req, res) => {
+    let { id } = req.params
+    const myId = await Country.findOne({ where: {id} ,  
         include: Activity
     });
-    console.log(myId)
 if (myId === null) {
   res.send('Not found!');
 } else {
@@ -54,9 +53,5 @@ if (myId === null) {
 }
 })
 
-router.post("/activity", (req, res) => {
-    const {datos} = req.body;
-
-})
 
 module.exports = router;

@@ -10,7 +10,8 @@ module.exports = (sequelize) => {
     },
     name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        foreignKey: true
     },
     difficulty: {
         type: DataTypes.INTEGER,
@@ -18,6 +19,11 @@ module.exports = (sequelize) => {
             min: 1,
             max: 5
         }
+    },
+    duration: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+
     },
     season: {
         type: DataTypes.STRING,

@@ -9,13 +9,14 @@ const Home = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getAllCountries())
+        dispatch(getAllCountries()) // aca llamo a mi funcion para traer todas las countries
     },[dispatch]);
 
     
     
     return (
         <div>
+            <Link to="/Home/createActivity">Crear actividad</Link>
          <Countries/>   
         </div>
     )

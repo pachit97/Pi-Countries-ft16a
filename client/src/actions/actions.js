@@ -61,8 +61,8 @@ export function filterByActivity(payload){
         payload
     }
 }
-export function postActivity(activity){
+export function postActivity(activities){
     return async (dispatch) => {
-        await axios.post('http://localhost:3001/api/activity', activity)   
+        await axios.post('http://localhost:3001/api/activities', activities)   
         }
 }

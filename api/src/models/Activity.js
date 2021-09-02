@@ -11,7 +11,6 @@ module.exports = (sequelize) => {
     name: {
         type: DataTypes.STRING,
         allowNull: false,
-        foreignKey: true
     },
     difficulty: {
         type: DataTypes.INTEGER,

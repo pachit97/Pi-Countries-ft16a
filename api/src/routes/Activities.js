@@ -2,29 +2,24 @@ const { Router } = require('express');
 const express = require('express');
 const router = Router();
 const { Country , Activity } = require('../db.js');
+const { Op } = require('sequelize');
 
 router.post("/", async (req, res, next) => {
     const { name, difficulty, season, duration, country} = req.body;
     try {
-        const [activity, created]=await Activity.findOrCreate({
-          where: {
-            name
-            },
-            defaults:{
-                name,
-                difficulty,
-                season,
-                duration
+        const [activity] = await Activity.findOrCreate({
+          where: { name: name },
+          defaults: {
+            name: name,
+            difficulty: difficulty,
+            season: season,
+            duration: duration
             }
         })
-        let myCountry = await Country.findOne({
-          where:{
-            id: country.slice(0, 3).toUpperCase()
-          }
-        })
+
         console.log(activity)
-        await activity.addCountries(myCountry)
-        res.json(activity)
+        await activity.addCountries(country)
+        res.send("the activity was created successfully")
     } catch (error) {
         next(error)        
     }

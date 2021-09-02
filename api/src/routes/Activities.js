@@ -7,8 +7,13 @@ const { Op } = require('sequelize');
 router.post("/", async (req, res, next) => {
     const { name, difficulty, season, duration, country} = req.body;
     try {
-        const [activity] = await Activity.findOrCreate({
-          where: { name: name },
+        const [activity, wasCreated] = await Activity.findOrCreate({
+          where: { 
+            name: name,
+            difficulty: difficulty,
+            season: season,
+            duration: duration
+          },
           defaults: {
             name: name,
             difficulty: difficulty,
@@ -19,7 +24,11 @@ router.post("/", async (req, res, next) => {
 
         console.log(activity)
         await activity.addCountries(country)
-        res.send("the activity was created successfully")
+        if(wasCreated){
+          res.send("the activity was created successfully")
+        }else{
+          res.send("esta actividad ya existe")
+        }
     } catch (error) {
         next(error)        
     }

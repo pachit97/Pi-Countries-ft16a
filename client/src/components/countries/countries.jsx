@@ -13,7 +13,7 @@ const Countries = () => {
         <div >
             <div >
                 {countries.map((e) => (
-                    <Country
+                    <Country key={e.id}
                         id={e.id}
                         image={e.image}
                         name={e.name}

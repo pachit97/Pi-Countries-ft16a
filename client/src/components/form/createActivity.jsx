@@ -5,12 +5,14 @@ import { postActivity } from '../../actions/actions';
 
 
 const CreateActivity = () => {
+    const countries = useSelector(state => state.countries)
     const dispatch = useDispatch()
     const [activities, setActivities] = useState({
         name: "",
         difficulty: "",
         duration: "",
         season: "",
+        country: []
     })
 
     const handleOnChange = (e) => setActivities({
@@ -21,7 +23,7 @@ const CreateActivity = () => {
     const handleOnSubmit = (e) => {
         e.preventDefault();
         dispatch(postActivity(activities))
-        setActivities("")
+        
     }
 
 
@@ -54,6 +56,18 @@ const CreateActivity = () => {
                 <option value='spring'>{'spring'}</option>
             </select>
             </div>
+            <div>
+                    <select onChange={handleOnChange} name="country" id="countries" multiple>
+                        {
+                            countries.map(country => {
+                                return (
+                                    <option key={country.id} value={(country.id)}>{country.name}</option>
+                                )
+                            })
+                        }
+
+                    </select>
+                </div>
             <div>
             <button>Crear</button>
             </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { postActivity } from '../../actions/actions';
+import { Link } from 'react-router-dom';
 
 
 const CreateActivity = () => {
@@ -31,6 +32,7 @@ const CreateActivity = () => {
 
     return (
         <form onSubmit={handleOnSubmit}>
+            <Link  to='/home'>Home</Link>
             <div>
             <label>Name:</label>
             <input onChange={handleOnChange} name="name" type="text" value={activities.name} ></input>

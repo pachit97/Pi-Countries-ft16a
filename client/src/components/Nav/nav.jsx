@@ -8,23 +8,21 @@ export function Nav() {
     const dispatch = useDispatch()
     const [countries2, setCountries2] = useState()
     const countries = useSelector(state => state.countries)
-    const countriesFilter = useSelector(state => state.countriesFilter)
+    const countriesCopy = useSelector(state => state.countriesCopy)
     
 
     const onChangeOrder = (event) => {
         event.preventDefault()
-       
         if(event.target.value === ASC){
-            dispatch(sortCountryASC(countries))
+            dispatch(sortCountryASC(countriesCopy))
         }
         if(event.target.value === DES){
-            dispatch(sortCountryDES(countries))
+            dispatch(sortCountryDES(countriesCopy))
         }
     }
 
     const onChangePopulation = (event) => {
         event.preventDefault()
-        
         if(event.target.value === ASCPOP){
             dispatch(sortCountryCANT_ASCPOP())
         }
@@ -35,6 +33,7 @@ export function Nav() {
 
     const onChangeContinent = (event) => {
         dispatch(filterByContinent(event.target.value))
+
     }
     
     // como muestro mi otro arreglo countriesfilter en vez de countries cuando entra a filtrado por continente

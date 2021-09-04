@@ -4,7 +4,7 @@ const initialState = {
     countries: [],
     countriesDetail: {},
     activities: [],
-    countriesFilter:[]
+    countriesCopy:[]
 };
 
 export function reducer(state = initialState, action){
@@ -12,7 +12,8 @@ export function reducer(state = initialState, action){
         case GET_COUNTRIES:
             return {
                 ...state,
-                countries: action.payload
+                countries: action.payload,
+                countriesCopy: action.payload
             }
         case GET_COUNTRY_DETAIL:
             return {
@@ -47,7 +48,7 @@ export function reducer(state = initialState, action){
         case FILTER_BY_CONTINENT:
             return {
                 ...state,
-                countriesFilter: state.countries.filter((c) => c.continent === action.payload)
+               countries: action.payload === "none" ? state.countriesCopy : state.countriesCopy.filter(e => e.continent === action.payload)
             }
         case FILTER_BY_ACTIVITY:
             return {

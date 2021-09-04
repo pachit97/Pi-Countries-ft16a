@@ -14,7 +14,6 @@ const Home = () => {
     },[dispatch]);
 
     
-    
     return (
         <div>
             <Link to="/Home/createActivity">Crear actividad</Link>

@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { filterByActivity, filterByContinent, sortCountryASC, sortCountryCANT_ASCPOP, sortCountryCANT_DESPOP, sortCountryDES } from '../../actions/actions';
+import { filterByActivity, getAllCountries, filterByContinent, sortCountryASC, sortCountryCANT_ASCPOP, sortCountryCANT_DESPOP, sortCountryDES } from '../../actions/actions';
 import { ASC, DES, ASCPOP, DESPOP } from '../../actionsNames';
 import { useSelector, useDispatch } from 'react-redux';
 
 export function Nav() {
-    const  dispatch = useDispatch()
-    const [countriesFilter, setCountriesFilter] = useState()
+    const dispatch = useDispatch()
+    const [countries2, setCountries2] = useState()
     const countries = useSelector(state => state.countries)
+    const countriesFilter = useSelector(state => state.countriesFilter)
     
 
     const onChangeOrder = (event) => {
         event.preventDefault()
+       
         if(event.target.value === ASC){
             dispatch(sortCountryASC(countries))
         }
@@ -22,6 +24,7 @@ export function Nav() {
 
     const onChangePopulation = (event) => {
         event.preventDefault()
+        
         if(event.target.value === ASCPOP){
             dispatch(sortCountryCANT_ASCPOP())
         }
@@ -33,8 +36,8 @@ export function Nav() {
     const onChangeContinent = (event) => {
         dispatch(filterByContinent(event.target.value))
     }
-
-
+    
+    // como muestro mi otro arreglo countriesfilter en vez de countries cuando entra a filtrado por continente
 
 
     return(

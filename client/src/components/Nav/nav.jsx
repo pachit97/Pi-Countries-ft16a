@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { filterByActivity, getAllCountries, filterByContinent, sortCountryASC, sortCountryCANT_ASCPOP, sortCountryCANT_DESPOP, sortCountryDES } from '../../actions/actions';
-import { ASC, DES, ASCPOP, DESPOP } from '../../actionsNames';
+import { filterByActivity, getCountry, getAllCountries, filterByContinent, sortCountryASC, sortCountryCANT_ASCPOP, sortCountryCANT_DESPOP, sortCountryDES } from '../../actions/actions';
+import { ASC, DES, ASCPOP, DESPOP, GET_COUNTRY } from '../../actionsNames';
 import { useSelector, useDispatch } from 'react-redux';
 
 export function Nav() {
     const dispatch = useDispatch()
-    const [countries2, setCountries2] = useState()
     const countries = useSelector(state => state.countries)
     const countriesCopy = useSelector(state => state.countriesCopy)
+    const [state, setState] = useState("");
     
+    const inputCountry = (event) =>{
+        setState(event.target.value)
+    }
+
+    const onClickCountry = () => {
+        dispatch(getCountry(state))
+    }
 
     const onChangeOrder = (event) => {
         event.preventDefault()
         if(event.target.value === ASC){
-            dispatch(sortCountryASC(countriesCopy))
+            dispatch(sortCountryASC())
         }
         if(event.target.value === DES){
-            dispatch(sortCountryDES(countriesCopy))
+            dispatch(sortCountryDES())
         }
     }
 
@@ -41,6 +48,13 @@ export function Nav() {
 
     return(
         <div>
+            <div>FILTROS</div>
+            
+            <div>
+                <input  required autoComplete="off" type="text" placeholder="Search by name" name="input" onChange={inputCountry}/>
+                <button  onClick={onClickCountry}>Search</button>
+            </div>
+            
         <div>
             <select onChange={onChangeOrder}>
                 <optgroup label="Alphabetical Order">

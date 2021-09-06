@@ -10,12 +10,8 @@ export function Nav() {
     const countries = useSelector(state => state.countries)
     const countriesCopy = useSelector(state => state.countriesCopy)
 
-    const [state, setState] = useState("");
     const inputCountry = (event) =>{
-        setState(event.target.value)
-    }
-    const onClickCountry = () => {
-        dispatch(getCountry(state))
+        dispatch(getCountry(event.target.value))
     }
 
     const [activity, setActivity] = useState("");
@@ -34,6 +30,9 @@ export function Nav() {
         if(event.target.value === DES){
             dispatch(sortCountryDES())
         }
+        if(event.target.value == "none"){
+            dispatch(getAllCountries())
+        }
     }
 
     const onChangePopulation = (event) => {
@@ -43,6 +42,9 @@ export function Nav() {
         }
         if(event.target.value === DESPOP){
             dispatch(sortCountryCANT_DESPOP())
+        }
+        if(event.target.value == "none"){
+            dispatch(getAllCountries())
         }
     }
 
@@ -91,13 +93,12 @@ export function Nav() {
         <div>
             Search
         </div>
-        <div>
-                <input  required autoComplete="off" type="text" placeholder="Search by name" name="input" onChange={inputCountry}/>
-                <button  onClick={onClickCountry}>Search</button>
+        <div className="name">
+                <input type="text" placeholder="Search by name" className="inputCountry" onChange={inputCountry}/>
         </div>
         <div>
-            <input  required autoComplete="off" type="text" placeholder="Search by activity"  onChange={inputActivity}/>
-            <button  onClick={onClickActivity}>Search</button>
+            <input className="inputActivity" type="text" placeholder="Search by activity" onChange={inputActivity}/>
+            <button className="buttonActivity" onClick={onClickActivity}>Search</button>
         </div>
         </div>
     )

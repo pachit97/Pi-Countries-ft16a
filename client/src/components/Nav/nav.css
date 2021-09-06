@@ -12,3 +12,35 @@
 .continent {
     display: flex;
 }
+
+.inputCountry{
+    border-radius: 30px;
+    margin: 0px;
+    outline: none;
+    background-color: #f2c184;
+    border: 0;
+    width: 250px;
+}
+
+.name{
+    display: flex;
+    justify-content: center;
+}
+
+.inputActivity{
+    border-radius: 30px;
+    margin: 0px;
+    padding: 6px;
+    outline: none;
+    background-color: #f2c184;
+    border: 0;
+    width: 250px;
+}
+
+.buttonActivity{
+    background-color: #ba581b;
+    border-radius: 10%;
+    padding: 5px;
+    color: black;
+    border: white 1px solid;
+}

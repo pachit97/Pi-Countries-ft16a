@@ -62,15 +62,10 @@ export function Nav() {
 
     return(
         <div>
-            <div className="homeLink">
-            <h3 className="countriesApp" onClick={onClick}>Countries App</h3>
-            <h3 className="linkToHome" ></h3>
-            <h3 className="linkToActivity"><Link className="linkToActivity" to="/Home/createActivity">Crear actividad</Link></h3>
-            </div>
         <div className="NavigationBar">
-            <div className="Filter">
-                Filter
-            </div>
+        <div className="homeLink">
+            <h2 className="countriesApp" onClick={onClick}>Countries App</h2>
+        </div>
         <div className="order">
             <select className="pintar" onChange={onChangeOrder}>
                 <optgroup className="pintar" label="Alphabetical Order">
@@ -112,6 +107,7 @@ export function Nav() {
             <input className="inputActivity" type="text" placeholder="Search by activity" onChange={inputActivity}/>
             <button className="buttonActivity" onClick={onClickActivity}>Search</button>
         </div>
+        <h2 className="linkToActivity"><Link className="linkToActivity" to="/Home/createActivity">Crear actividad</Link></h2>
         </div>
         </div>
     )

@@ -3,19 +3,27 @@ import { Link } from 'react-router-dom';
 import { filterByActivity, getCountry, getAllCountries, filterByContinent, sortCountryASC, sortCountryCANT_ASCPOP, sortCountryCANT_DESPOP, sortCountryDES } from '../../actions/actions';
 import { ASC, DES, ASCPOP, DESPOP, GET_COUNTRY } from '../../actionsNames';
 import { useSelector, useDispatch } from 'react-redux';
+import "./nav.css"
 
 export function Nav() {
     const dispatch = useDispatch()
     const countries = useSelector(state => state.countries)
     const countriesCopy = useSelector(state => state.countriesCopy)
+
     const [state, setState] = useState("");
-    
     const inputCountry = (event) =>{
         setState(event.target.value)
     }
-
     const onClickCountry = () => {
         dispatch(getCountry(state))
+    }
+
+    const [activity, setActivity] = useState("");
+    const inputActivity = (e) => {
+        setActivity(e.target.value)
+    }
+    const onClickActivity = () => {
+        dispatch(filterByActivity(activity))
     }
 
     const onChangeOrder = (event) => {
@@ -47,15 +55,9 @@ export function Nav() {
 
 
     return(
-        <div>
-            <div>FILTROS</div>
-            
-            <div>
-                <input  required autoComplete="off" type="text" placeholder="Search by name" name="input" onChange={inputCountry}/>
-                <button  onClick={onClickCountry}>Search</button>
-            </div>
-            
-        <div>
+        <div className="NavigationBar">
+            <div>Filter</div>
+        <div className="order">
             <select onChange={onChangeOrder}>
                 <optgroup label="Alphabetical Order">
                     <option value="none">A-Z</option>
@@ -64,7 +66,7 @@ export function Nav() {
                 </optgroup>
             </select>
         </div>
-        <div>
+        <div className="population">
             <select onChange={onChangePopulation}>
                 <optgroup label="Order by population quantity">
                     <option value="none">Population</option>
@@ -73,7 +75,7 @@ export function Nav() {
                 </optgroup>
             </select>
         </div>
-        <div>
+        <div className="continent">
             <select onChange={onChangeContinent}>
                 <optgroup label="Select a continent">
                     <option value="none">Continent</option>
@@ -85,6 +87,17 @@ export function Nav() {
                     <option value="Polar">Polar</option>
                 </optgroup>
             </select>
+        </div>
+        <div>
+            Search
+        </div>
+        <div>
+                <input  required autoComplete="off" type="text" placeholder="Search by name" name="input" onChange={inputCountry}/>
+                <button  onClick={onClickCountry}>Search</button>
+        </div>
+        <div>
+            <input  required autoComplete="off" type="text" placeholder="Search by activity"  onChange={inputActivity}/>
+            <button  onClick={onClickActivity}>Search</button>
         </div>
         </div>
     )

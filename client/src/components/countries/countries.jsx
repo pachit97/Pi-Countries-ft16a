@@ -22,7 +22,7 @@ const Countries = () => {
     const filtrado = (currentPage == 0 ) ? countries.slice(currentPage, currentPage + 9) : countries.slice(currentPage, currentPage + 10);
 
     return (
-        <div >
+        <div className="home">
             <div >
                 { filtrado.map((e) => (
                     <Country key={e.id}
@@ -35,8 +35,7 @@ const Countries = () => {
             </div>
             <div >
                {currentPage !== 0 ? <button onClick={prev}>PREV PAGE</button> : <div></div> }
-                { currentPage !== 240 ? <button onClick={next}>NEXT PAGE</button> : <div></div> }
-                
+               {currentPage !== 240 ? <button onClick={next}>NEXT PAGE</button> : <div></div>}
             </div>
         </div>
     )

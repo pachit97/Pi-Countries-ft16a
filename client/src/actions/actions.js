@@ -22,13 +22,6 @@ export function getCountriesDetail(id){
     }
 }
 
-export function getActivity(){
-    return async (dispatch) => {
-        const res = await axios.get('http://localhost:3001/api/activities')
-        dispatch({ type: GET_ACTIVITY, payload: res.data })
-    }
-}
-
 export function sortCountryASC(){
     return {
         type: ASC

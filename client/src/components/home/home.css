@@ -1,0 +1,37 @@
+.homeDiv {
+    background: url("https://www.edmradio.es/wp-content/uploads/2020/10/compas-y-correspondencia-antigua-de-italia-116245786.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+  .homeLink {
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0.3em;
+    padding: 0.2em;
+    color: white;
+    align-self: flex-start;
+    background-color:black;
+    height: 45px;
+}
+.countriesApp{
+  justify-content: left;
+  display: flex;
+  color: white;
+  margin-top: 5px;
+}
+
+.linkToHome{
+  width: 1010px;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.linkToActivity{
+  text-decoration: none;
+  margin-top: 5px;
+}

@@ -52,34 +52,46 @@ export function Nav() {
         dispatch(filterByContinent(event.target.value))
 
     }
+
+    const onClick = () => {
+        dispatch(getAllCountries())
+    }
     
     // como muestro mi otro arreglo countriesfilter en vez de countries cuando entra a filtrado por continente
 
 
     return(
+        <div>
+            <div className="homeLink">
+            <h3 className="countriesApp" onClick={onClick}>Countries App</h3>
+            <h3 className="linkToHome" ></h3>
+            <h3 className="linkToActivity"><Link className="linkToActivity" to="/Home/createActivity">Crear actividad</Link></h3>
+            </div>
         <div className="NavigationBar">
-            <div>Filter</div>
+            <div className="Filter">
+                Filter
+            </div>
         <div className="order">
-            <select onChange={onChangeOrder}>
-                <optgroup label="Alphabetical Order">
-                    <option value="none">A-Z</option>
+            <select className="pintar" onChange={onChangeOrder}>
+                <optgroup className="pintar" label="Alphabetical Order">
+                    <option value="none">Alphafabetical</option>
                     <option value={ASC}>Ascending</option>
                     <option value={DES}>Descending</option>
                 </optgroup>
             </select>
         </div>
-        <div className="population">
-            <select onChange={onChangePopulation}>
-                <optgroup label="Order by population quantity">
+        <div className="order">
+            <select className="pintar" onChange={onChangePopulation}>
+                <optgroup className="pintar" label="Order by population quantity">
                     <option value="none">Population</option>
                     <option value={ASCPOP}>ascending</option>
                     <option value={DESPOP}>descending</option>
                 </optgroup>
             </select>
         </div>
-        <div className="continent">
-            <select onChange={onChangeContinent}>
-                <optgroup label="Select a continent">
+        <div className="order">
+            <select className="pintar" onChange={onChangeContinent}>
+                <optgroup className="pintar" label="Select a continent">
                     <option value="none">Continent</option>
                     <option value="Americas">America</option>
                     <option value="Europe">Europe</option>
@@ -90,7 +102,7 @@ export function Nav() {
                 </optgroup>
             </select>
         </div>
-        <div>
+        <div className="Search">
             Search
         </div>
         <div className="name">
@@ -99,6 +111,7 @@ export function Nav() {
         <div>
             <input className="inputActivity" type="text" placeholder="Search by activity" onChange={inputActivity}/>
             <button className="buttonActivity" onClick={onClickActivity}>Search</button>
+        </div>
         </div>
         </div>
     )

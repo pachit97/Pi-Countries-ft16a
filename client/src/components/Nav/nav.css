@@ -44,3 +44,62 @@
     color: black;
     border: white 1px solid;
 }
+
+.homeLink {
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0.3em;
+    padding: 0.2em;
+    color: white;
+    align-self: flex-start;
+    background-color:black;
+    height: 30px;
+}
+.countriesApp{
+  justify-content: left;
+  display: flex;
+  color: #ba581b;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+.linkToHome{
+  width: 1070px;
+  text-decoration: none;
+  margin-top: 5px;
+  color: #ba581b;
+}
+
+.linkToActivity{
+  text-decoration: none;
+  margin-top: 5px;
+  color: #ba581b;
+}
+.elLink{
+  text-decoration: none;
+}
+.Search{
+    color: #ba581b;
+    font-size: 20px;
+    margin-left: 80px;
+    font-weight: 700;
+    
+}
+.Filter{
+    margin-left: 0px;
+    color: #ba581b;
+    font-size: 20px;
+    font-weight: 700;
+}
+.order{
+    color: #ba581b;
+    background: #ba581b;
+    display: flex;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+.pintar{
+    background-color:#f2c184 ;
+}

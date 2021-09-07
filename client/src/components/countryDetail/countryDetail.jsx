@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router"
 import { getCountriesDetail } from "../../actions/actions"
 import { Link } from 'react-router-dom';
+import Activity from "../activity/activity"
 
 
 const DetailCountry = () => {
@@ -15,11 +16,11 @@ const DetailCountry = () => {
     },[dispatch])
 
     return (
-        <div >
-            <div>
+        <div className="detailTotal" >
+            <div className="detailLink">
                 <Link  to='/home'>Home</Link>
             </div>
-            <div >
+            <div className="detailContainer">
                 <h1>Name: {countriesDetail.name}</h1>
                 <img src = {countriesDetail.image} alt="no image" style={{width:300}}/>
                 <h5>id: {countriesDetail.id}</h5>
@@ -27,6 +28,7 @@ const DetailCountry = () => {
                 <h3>Capital: {countriesDetail.capital}</h3>
                 <h4>Area: {countriesDetail.area} Km2</h4>
                 <h4>Population: {countriesDetail.population}</h4>
+                <Activity countryName={countriesDetail.name} activities={countriesDetail.activities}/>
             </div>
         </div>
     )

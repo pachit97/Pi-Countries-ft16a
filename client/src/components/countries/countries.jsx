@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Country from './country';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCountries } from '../../actions/actions';
+import "./countries.css"
 
 const Countries = () => {
     const dispatch = useDispatch()
@@ -23,7 +24,7 @@ const Countries = () => {
 
     return (
         <div className="home">
-            <div >
+            <div className="countries">
                 { filtrado.map((e) => (
                     <Country key={e.id}
                         id={e.id}
@@ -33,9 +34,9 @@ const Countries = () => {
                     />
                 ))}
             </div>
-            <div >
-               {currentPage !== 0 ? <button onClick={prev}>PREV PAGE</button> : <div></div> }
-               {currentPage !== 240 ? <button onClick={next}>NEXT PAGE</button> : <div></div>}
+            <div>
+               {currentPage !== 0 ? <button className="botonesNavegacion" onClick={prev}>PREV PAGE</button> : <div></div> }
+               {currentPage !== 240 ? <button className="botonesNavegacion" onClick={next}>NEXT PAGE</button> : <div></div>}
             </div>
         </div>
     )

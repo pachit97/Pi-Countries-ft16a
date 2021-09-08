@@ -1,0 +1,33 @@
+.detailTotal {
+    display: flex;
+    justify-content: center;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, #ba581b 0%, #f2c184 50%, #ba581b 100%);
+    background-color: #7d4116; 
+    background-size: cover;
+}
+.detailLink{
+    position: absolute;
+    left: 50px;
+    top: 12px;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: black 1px solid;
+    border-radius: 5%;
+    color: black;
+    border-radius: 5px;
+    background-color: #f2c184;
+}
+.detailContainer{
+    width: 700px;
+    justify-content: center;
+}
+.imagenn{
+    height: 250px;
+}
+.detailClick{
+    text-decoration: none;
+    color:black
+}

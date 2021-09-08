@@ -22,6 +22,11 @@ const Countries = () => {
     }
     const filtrado = (currentPage == 0 ) ? countries.slice(currentPage, currentPage + 9) : countries.slice(currentPage, currentPage + 10);
 
+    const reinicio = () => {
+        setCurrentPage(0)
+    }
+
+
     return (
         <div className="home">
             <div className="countries">
@@ -37,6 +42,7 @@ const Countries = () => {
             <div>
                {currentPage !== 0 ? <button className="botonesNavegacion" onClick={prev}>PREV PAGE</button> : <div></div> }
                {currentPage !== 240 ? <button className="botonesNavegacion" onClick={next}>NEXT PAGE</button> : <div></div>}
+               {currentPage !== 249 ? <button className="botonPanico" onClick={reinicio}>INICIO</button> : <div></div>}
             </div>
         </div>
     )

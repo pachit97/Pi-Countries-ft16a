@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 const CreateActivity = () => {
     const countries = useSelector(state => state.countries)
     const dispatch = useDispatch()
+    const [error, setError] = useState()
+    const [validate, setValidate] = useState()
     const [activities, setActivities] = useState({
         name: "",
         difficulty: "",
@@ -23,12 +25,15 @@ const CreateActivity = () => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        dispatch(postActivity(activities))
+        if(!activities.name.length || !activities.difficulty.length || !activities.season || !activities.duration.length || !activities.country.length){
+            setError(false)
+            alert("You must complete all the fields")
+        }else{
+            setError(true)
+            dispatch(postActivity(activities))
+        }
         
     }
-
-
-
 
     return (
         <form onSubmit={handleOnSubmit}>
@@ -73,6 +78,9 @@ const CreateActivity = () => {
             <div>
             <button>Crear</button>
             </div>
+            {
+                error ? <div>The activity was created</div> : <div></div>
+            }
         </form>
     )
 }

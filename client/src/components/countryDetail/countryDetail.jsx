@@ -4,6 +4,7 @@ import { useParams } from "react-router"
 import { getCountriesDetail } from "../../actions/actions"
 import { Link } from 'react-router-dom';
 import Activity from "../activity/activity"
+import "./countryDetail.css"
 
 
 const DetailCountry = () => {
@@ -18,17 +19,17 @@ const DetailCountry = () => {
     return (
         <div className="detailTotal" >
             <div className="detailLink">
-                <Link  to='/home'>Home</Link>
+                <Link className="detailClick" to='/home'>Home</Link>
             </div>
             <div className="detailContainer">
-                <h1>Name: {countriesDetail.name}</h1>
-                <img src = {countriesDetail.image} alt="no image" style={{width:300}}/>
-                <h5>id: {countriesDetail.id}</h5>
+                <h1>{countriesDetail.name}</h1>
+                <img className="imagenn" src = {countriesDetail.image} alt="no image" />
+                <h3>Id: {countriesDetail.id}</h3>
                 <h3>Continent: {countriesDetail.continent}</h3>
                 <h3>Capital: {countriesDetail.capital}</h3>
-                <h4>Area: {countriesDetail.area} Km2</h4>
-                <h4>Population: {countriesDetail.population}</h4>
-                <Activity countryName={countriesDetail.name} activities={countriesDetail.activities}/>
+                <h3>Area: {countriesDetail.area} Km2</h3>
+                <h3>Population: {countriesDetail.population}</h3>
+                <Activity className="activityDetail" countryName={countriesDetail.name} activities={countriesDetail.activities}/>
             </div>
         </div>
     )

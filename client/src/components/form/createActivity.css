@@ -64,21 +64,22 @@ margin-bottom: 20px;
 }
 .dentro{
     justify-content: center;
-    margin-top: 30px;  
-    margin-bottom: 30px;
+    margin-top: 20px;  
+    margin-bottom: 20px;
     text-decoration: none;
     border: black 2px solid;
     border-radius: 5%;
     color: black;
     border-radius: 5px;
     background-color: #f2c184;
+    width: 400px;
 }
 .opciones{
     margin-right: 10px;
     margin-left: 10px;
-    display: flex;
     height: 250px;
     background-color: #dd9a5d;
+    justify-content: center;
 }
 .create{
     margin-top: 0px;
@@ -94,4 +95,10 @@ margin-bottom: 20px;
     border: black 1px solid;
     margin-top: 5px;
     margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.seCreo{
+    color: green;
+    font-weight: bold;
 }

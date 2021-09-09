@@ -1,10 +1,8 @@
 .detailTotal {
     display: flex;
+    min-height: 100vh;
     justify-content: center;
-    background: rgb(2,0,36);
     background: linear-gradient(90deg, #ba581b 0%, #f2c184 50%, #ba581b 100%);
-    background-color: #7d4116; 
-    background-size: cover;
 }
 .detailLink{
     position: absolute;
@@ -21,13 +19,44 @@
     background-color: #f2c184;
 }
 .detailContainer{
-    width: 700px;
+    width: 400px;
     justify-content: center;
+    margin-top: 20px;  
+    margin-bottom: 20px;
+    text-decoration: none;
+    border: black 2px solid;
+    border-radius: 5%;
+    color: black;
+    border-radius: 5px;
+    background-color: #f2c184;
+
 }
 .imagenn{
-    height: 250px;
+    margin-top: 10px;
+    height: 170px;
+    border: black 2px solid;
+    border-radius: 5px;
 }
 .detailClick{
     text-decoration: none;
     color:black
+}
+.tabla{
+    margin-bottom: 20px;
+}
+.detail{
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.detailName{
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.elcountry{
+    text-decoration: underline;
+    font-size: 30px;
+    margin-bottom: 5px;
+    font-weight: bold;
 }

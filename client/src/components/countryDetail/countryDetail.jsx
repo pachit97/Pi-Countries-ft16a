@@ -22,13 +22,14 @@ const DetailCountry = () => {
                 <Link className="detailClick" to='/home'>Home</Link>
             </div>
             <div className="detailContainer">
-                <h1>{countriesDetail.name}</h1>
+                <div className="elcountry">Country detail</div>
+                <div className="detailName">{countriesDetail.name}</div>
                 <img className="imagenn" src = {countriesDetail.image} alt="no image" />
-                <h3>Id: {countriesDetail.id}</h3>
-                <h3>Continent: {countriesDetail.continent}</h3>
-                <h3>Capital: {countriesDetail.capital}</h3>
-                <h3>Area: {countriesDetail.area} Km2</h3>
-                <h3>Population: {countriesDetail.population}</h3>
+                <div className="detail">ID: {countriesDetail.id}</div>
+                <div className="detail">Continent: {countriesDetail.continent}</div>
+                <div className="detail">Capital: {countriesDetail.capital}</div>
+                <div className="detail">Area: {countriesDetail.area} Km2</div>
+                <div className="detail">Population: {countriesDetail.population}</div>
                 <Activity className="activityDetail" countryName={countriesDetail.name} activities={countriesDetail.activities}/>
             </div>
         </div>

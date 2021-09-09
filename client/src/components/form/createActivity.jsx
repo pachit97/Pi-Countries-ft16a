@@ -81,7 +81,7 @@ const CreateActivity = () => {
             <button className="elgranboton">Crear</button>
             </div>
             {
-                error ? <div>The activity was created</div> : <div></div>
+                error ? <div className="seCreo">The activity was created</div> : <div></div>
             }
             </div>
         </form>

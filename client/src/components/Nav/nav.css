@@ -3,7 +3,6 @@
     flex-direction: row;
     padding-bottom: 0.3em;
     padding: 0.2em;
-    color: white;
     align-self: flex-start;
     background-color:black;
 }
@@ -62,6 +61,7 @@
     align-self: flex-start;
     background-color:black;
     height: 30px;
+    
 }
 .countriesApp{
   justify-content: left;

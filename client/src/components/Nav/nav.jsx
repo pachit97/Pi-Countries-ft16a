@@ -21,6 +21,7 @@ export function Nav() {
     }
     const onClickActivity = () => {
         dispatch(filterByActivity(activity))
+        setActivity("")
     }
 
     const onChangeOrder = (event) => {

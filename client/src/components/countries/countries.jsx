@@ -20,7 +20,7 @@ const Countries = () => {
     let prev = () => {
         setCurrentPage(currentPage - 10)
     }
-    const filtrado = (currentPage == 0 ) ? countries.slice(currentPage, currentPage + 9) : ((currentPage == 10) ? (countries.slice(9, currentPage + 9)) : (countries.slice(currentPage - 1, currentPage + 9)) );
+    const filtrado = (currentPage == 0 ) ? countries.slice(currentPage, currentPage + 9) : (countries.slice(currentPage - 1, currentPage + 9));
 
     
 

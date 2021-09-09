@@ -38,7 +38,9 @@ const CreateActivity = () => {
     return (
         <form className="Formu" onSubmit={handleOnSubmit}>
             <Link className="button" to='/home'>Home</Link>
+            <div className="dentro">
             <div>
+            <h3 className="create">Create an activity</h3>
             <label className="theName">Name:</label>
             <input className="inputName" onChange={handleOnChange} name="name" type="text" value={activities.name} ></input>
             </div>
@@ -50,8 +52,7 @@ const CreateActivity = () => {
 
             <div>
             <label className="theDuration" >Duration:</label>
-            <input className="inputDuration" onChange={handleOnChange} name="duration" value={activities.duration} type="text" placeholder="in minutes
-"></input>
+            <input className="inputDuration" onChange={handleOnChange} name="duration" value={activities.duration} type="text" placeholder="in minutes"></input>
             </div>
             
             <div>
@@ -65,7 +66,7 @@ const CreateActivity = () => {
             </select>
             </div>
             <div>
-                    <select onChange={handleOnChange} name="country" id="countries" multiple>
+                    <select className="opciones" onChange={handleOnChange} name="country" id="countries" multiple>
                         {
                             countries.map(country => {
                                 return (
@@ -77,11 +78,12 @@ const CreateActivity = () => {
                     </select>
                 </div>
             <div>
-            <button>Crear</button>
+            <button className="elgranboton">Crear</button>
             </div>
             {
                 error ? <div>The activity was created</div> : <div></div>
             }
+            </div>
         </form>
     )
 }

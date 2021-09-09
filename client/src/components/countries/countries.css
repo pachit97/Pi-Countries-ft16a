@@ -8,6 +8,9 @@
     margin-left: 15px;
     margin-bottom: 10px;
 }
+.botonesNavegacion:hover{
+    color: white;
+}
 .countries{
     justify-content: center;
     display: flex;
@@ -25,4 +28,7 @@
     margin-left: 15px;
     margin-bottom: 10px;
     justify-content: left;
+}
+.botonPanico:hover{
+    color: white;
 }

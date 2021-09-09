@@ -1,6 +1,5 @@
 .Formu{
-    background-position-x: center;
-    background-position-y: center;
+    display: flex;
     min-height: 100vh;
     justify-content: center;
     background: linear-gradient(90deg, #ba581b 0%, #f2c184 50%, #ba581b 100%);
@@ -8,52 +7,46 @@
 .theName{
     font-size: 20px;
     font-weight: bold;
-    text-decoration: underline;
     background: black;
     background-clip:initial;
     -webkit-background-clip: text;
     margin-right: 10px;
-    margin-bottom: 20px;
 }
 .inputName{
-
+margin-bottom: 20px;
 }
 .theDifficulty{
-    
     font-size: 20px;
     font-weight: bold;
-    text-decoration: underline;
     background: black;
     background-clip:initial;
     -webkit-background-clip: text;
     margin-right: 10px;
 }
 .inputDifficulty{
-
+    margin-bottom: 20px;
 }
 .theDuration{
     font-size: 20px;
     font-weight: bold;
-    text-decoration: underline;
     background: black;
     background-clip:initial;
     -webkit-background-clip: text;
     margin-right: 10px;
 }
 .inputDuration{
-
+    margin-bottom: 20px;
 }
 .theSeason{
     font-size: 20px;
     font-weight: bold;
-    text-decoration: underline;
     background: black;
     background-clip:initial;
     -webkit-background-clip: text;
     margin-right: 10px;
 }
 .selectSeason{
-
+    margin-bottom: 30px;
 }
 .button{
     position: absolute;
@@ -68,4 +61,37 @@
     color: black;
     border-radius: 5px;
     background-color: #f2c184;
+}
+.dentro{
+    justify-content: center;
+    margin-top: 30px;  
+    margin-bottom: 30px;
+    text-decoration: none;
+    border: black 2px solid;
+    border-radius: 5%;
+    color: black;
+    border-radius: 5px;
+    background-color: #f2c184;
+}
+.opciones{
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    height: 250px;
+    background-color: #dd9a5d;
+}
+.create{
+    margin-top: 0px;
+    text-decoration: underline;
+    font-size: 30px;
+    font-weight: bold;
+}
+.elgranboton{
+    background-color: #ba581b;
+    border-radius: 10%;
+    padding: 5px;
+    color: black;
+    border: black 1px solid;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }

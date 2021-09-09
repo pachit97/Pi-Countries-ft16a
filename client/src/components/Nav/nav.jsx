@@ -16,6 +16,7 @@ export function Nav() {
 
     const [activity, setActivity] = useState("");
     const inputActivity = (e) => {
+        e.preventDefault()
         setActivity(e.target.value)
     }
     const onClickActivity = () => {
@@ -70,8 +71,8 @@ export function Nav() {
             <select className="pintar" onChange={onChangeOrder}>
                 <optgroup className="pintar" label="Alphabetical Order">
                     <option value="none">Alphafabetical</option>
-                    <option value={ASC}>Ascending</option>
-                    <option value={DES}>Descending</option>
+                    <option value={ASC}>A - Z</option>
+                    <option value={DES}>Z - A</option>
                 </optgroup>
             </select>
         </div>
@@ -79,8 +80,8 @@ export function Nav() {
             <select className="pintar" onChange={onChangePopulation}>
                 <optgroup className="pintar" label="Order by population quantity">
                     <option value="none">Population</option>
-                    <option value={ASCPOP}>ascending</option>
-                    <option value={DESPOP}>descending</option>
+                    <option value={ASCPOP}>Smaller</option>
+                    <option value={DESPOP}>Higher</option>
                 </optgroup>
             </select>
         </div>
@@ -104,7 +105,7 @@ export function Nav() {
                 <input type="text" placeholder="Search by name" className="inputCountry" onChange={inputCountry}/>
         </div>
         <div>
-            <input className="inputActivity" type="text" placeholder="Search by activity" onChange={inputActivity}/>
+            <input className="inputActivity" value={activity} type="text" placeholder="Search by activity" onChange={inputActivity}/>
             <button className="buttonActivity" onClick={onClickActivity}>Search</button>
         </div>
         <h2 className="linkToActivity"><Link className="linkToActivity" to="/Home/createActivity">Crear actividad</Link></h2>

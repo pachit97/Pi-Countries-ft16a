@@ -50,13 +50,11 @@ export function reducer(state = initialState, action){
                 ...state,
                countries: action.payload === "none" ? state.countriesCopy : state.countriesCopy.filter(e => e.continent === action.payload)
             }
-        case FILTER_BY_ACTIVITY:
-            return {
-                ...state,
-                countries: state.countries.filter((c)=>{
-                    return c.activities?.some((a)=> a.name === action.payload)
-            })
-        }
+            case FILTER_BY_ACTIVITY:
+                return {
+                    ...state,
+                    countries: state.countries.filter((c)=>{return c.activities?.some((a)=> a.name === action.payload)})
+            }
     default:
       return state;
     }

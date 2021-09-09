@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { postActivity } from '../../actions/actions';
 import { Link } from 'react-router-dom';
-
+import "./createActivity.css"
 
 const CreateActivity = () => {
     const countries = useSelector(state => state.countries)
@@ -36,26 +36,27 @@ const CreateActivity = () => {
     }
 
     return (
-        <form onSubmit={handleOnSubmit}>
-            <Link  to='/home'>Home</Link>
+        <form className="Formu" onSubmit={handleOnSubmit}>
+            <Link className="button" to='/home'>Home</Link>
             <div>
-            <label>Name:</label>
-            <input onChange={handleOnChange} name="name" type="text" value={activities.name} ></input>
+            <label className="theName">Name:</label>
+            <input className="inputName" onChange={handleOnChange} name="name" type="text" value={activities.name} ></input>
             </div>
 
             <div>
-            <label>Difficulty:</label>
-            <input onChange={handleOnChange} type="text" name="difficulty" value={activities.difficulty} placeholder="between 1 and 5"></input>
+            <label className="theDifficulty">Difficulty:</label>
+            <input className="inputDifficulty" onChange={handleOnChange} type="text" name="difficulty" value={activities.difficulty} placeholder="between 1 and 5"></input>
             </div>
 
             <div>
-            <label>Duration:</label>
-            <input onChange={handleOnChange} name="duration" value={activities.duration} type="text" placeholder=""></input>
+            <label className="theDuration" >Duration:</label>
+            <input className="inputDuration" onChange={handleOnChange} name="duration" value={activities.duration} type="text" placeholder="in minutes
+"></input>
             </div>
             
             <div>
-            <label>Season:</label>
-            <select onChange={handleOnChange} name="season">
+            <label className="theSeason">Season:</label>
+            <select className="selectSeason" onChange={handleOnChange} name="season">
                 <option>-</option>
                 <option value='summer'>{'summer'}</option>
                 <option value='autumn'>{'autumn'}</option>

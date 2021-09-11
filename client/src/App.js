@@ -2,7 +2,6 @@ import './App.css';
 import { Route } from "react-router-dom";
 import React from 'react';
 import Landing from './components/landing';
-import Countries from './components/countries/countries';
 import Home from './components/home/home';
 import createActivity from './components/form/createActivity';
 import countryDetail from "./components/countryDetail/countryDetail"

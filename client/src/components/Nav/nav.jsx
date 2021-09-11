@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { filterByActivity, getCountry, getAllCountries, filterByContinent, sortCountryASC, sortCountryCANT_ASCPOP, sortCountryCANT_DESPOP, sortCountryDES } from '../../actions/actions';
-import { ASC, DES, ASCPOP, DESPOP, GET_COUNTRY } from '../../actionsNames';
-import { useSelector, useDispatch } from 'react-redux';
+import { ASC, DES, ASCPOP, DESPOP } from '../../actionsNames';
+import { useDispatch } from 'react-redux';
 import "./nav.css"
 
 export function Nav() {
     const dispatch = useDispatch()
-    const countries = useSelector(state => state.countries)
-    const countriesCopy = useSelector(state => state.countriesCopy)
 
     const inputCountry = (event) =>{
         dispatch(getCountry(event.target.value))
@@ -32,7 +30,7 @@ export function Nav() {
         if(event.target.value === DES){
             dispatch(sortCountryDES())
         }
-        if(event.target.value == "none"){
+        if(event.target.value === "none"){
             dispatch(getAllCountries())
         }
     }
@@ -45,7 +43,7 @@ export function Nav() {
         if(event.target.value === DESPOP){
             dispatch(sortCountryCANT_DESPOP())
         }
-        if(event.target.value == "none"){
+        if(event.target.value === "none"){
             dispatch(getAllCountries())
         }
     }

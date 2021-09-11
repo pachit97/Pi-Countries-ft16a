@@ -9,7 +9,6 @@ const CreateActivity = () => {
     const countries = useSelector(state => state.countries)
     const dispatch = useDispatch()
     const [error, setError] = useState()
-    const [validate, setValidate] = useState()
     const [activities, setActivities] = useState({
         name: "",
         difficulty: "",

@@ -8,9 +8,10 @@ const { v4: uuidv4 } = require('uuid');
 
 router.get("/", async(req, res) => {
     const {name} = req.query
-    const myCountries = await Country.findAll() 
+    const myCountries = await Country.findAll({
+      include: Activity
+    }) 
     if (name) {
-        
         var filtered = await myCountries.filter((country) =>
           country.name.toLowerCase().includes(name.toLowerCase())
         )
